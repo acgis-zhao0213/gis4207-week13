@@ -8,7 +8,8 @@ def main():
     fc   = sys.argv[1]
     # in_field = sys.argv[2]
     # out_ws  = sys.argv[3]
-    prov = sys.argv[2].upper()
+    prov_field = sys.argv[2]
+    prov = sys.argv[3].upper()
     if prov not in prov_codes:
         print (f'Invalid prov.  Must be one of {", ".join(prov_codes)}')
         exit()
@@ -17,7 +18,7 @@ def main():
 
     ws = r'..\..\..\..\data\Canada\Canada.gdb'
     arcpy.env.workspace = ws
-    prov_field = arcpy.AddFieldDelimiters(ws, 'Prov')
+    # prov_field = arcpy.AddFieldDelimiters(ws, 'Prov')
     wc =  f"{prov_field}='{prov}'"
   
     arcpy.AddMessage('Name,Prov,Longitude,Latitude')
