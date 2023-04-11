@@ -35,9 +35,7 @@ def main():
                                 clip_fc_path,
                                 out_fc_path)
 
-    def usage():
-        msg=arcpy.GetParameterAsText(0)
-        arcpy.AddMessage(msg)
-    sys.exit(0)
+    arcpy.AddMessage(f'{in_ws} is clipped by {clip_ws}')
+
 if __name__ == '__main__':
     main()
